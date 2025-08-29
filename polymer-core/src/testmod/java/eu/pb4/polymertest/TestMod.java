@@ -25,6 +25,7 @@ import eu.pb4.polymer.resourcepack.extras.api.format.sound.SoundsAsset;
 import eu.pb4.polymer.soundpatcher.api.SoundPatcher;
 import eu.pb4.polymer.virtualentity.api.BlockWithElementHolder;
 import eu.pb4.polymer.virtualentity.api.tracker.EntityTrackedData;
+import eu.pb4.polymertest.util.UnusedBlockStateDetector;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
@@ -307,6 +308,7 @@ public class TestMod implements ModInitializer {
         registerItem(Identifier.of("bugged", "wooden_sword"), BuggedItem::new);
 
         PolymerItemUtils.enableStonecutterFix();
+        UnusedBlockStateDetector.init();
 
         register(Registries.DIALOG_TYPE, Identifier.of("test", "dialog"), TestDialog.CODEC);
 
